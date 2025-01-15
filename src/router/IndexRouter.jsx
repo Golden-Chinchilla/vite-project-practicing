@@ -1,14 +1,13 @@
-import { BrowserRouter, HashRouter, Routes, Route } from "react-router";
-import Login from '../views/Login/Login';
-import NewsSandBox from '../views/NewsSandBox/NewsSandBox';
+import { BrowserRouter, Routes, Route } from "react-router";
+import Login from '../views/login/Login';
+import NewsSandBox from '../views/sandbox/NewsSandBox';
 
 export default function IndexRouter() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<>test</>}></Route>
+                <Route path='/' element={<NewsSandBox />}></Route>
                 <Route path='/login' element={<Login />}></Route>
-                <Route path='/newssandbox' element={<NewsSandBox />}></Route>
             </Routes>
         </BrowserRouter>
     )
