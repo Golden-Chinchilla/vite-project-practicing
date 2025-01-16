@@ -1,10 +1,14 @@
-import IndexRouter from "./router/IndexRouter";
+import RouterConfig from "./router/RouterConfig";
+import { BrowserRouter } from "react-router";
 
 function App() {
 
   return (
-    <IndexRouter>
-    </IndexRouter>
+    <BrowserRouter>
+      <RouterConfig>
+      </RouterConfig>
+    </BrowserRouter>
+
   );
 }
 
