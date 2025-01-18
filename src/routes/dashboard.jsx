@@ -2,17 +2,36 @@
 // import UserList from './dashboard.userList'
 // import RoleList from './dashboard.roleList'
 // import RightList from './dashboard.rightList'
-import TopHeader from '../components/topHeader'
-import SideMenu from '../components/sideMenu'
+import TopHeader from '../components/TopHeader'
+import SideMenu from '../components/SideMenu'
 import { Outlet } from "react-router"
+import { Layout, theme } from "antd";
+const { Content } = Layout;
 
 export default function Dashboard() {
+    const {
+        token: { colorBgContainer, borderRadiusLG },
+    } = theme.useToken();
     return (
-        <>
-            <TopHeader></TopHeader>
+        <Layout>
             <SideMenu></SideMenu>
-            <Outlet></Outlet>
-        </>
+            <Layout>
+                <TopHeader></TopHeader>
+                {/* Content 部分 */}
+                <Content
+                    style={{
+                        margin: '24px 16px',
+                        padding: 24,
+                        minHeight: 280,
+                        background: colorBgContainer,
+                        borderRadius: borderRadiusLG,
+                    }}
+                >
+                    <Outlet></Outlet>
+                </Content>
+            </Layout>
+
+        </Layout>
     )
 }
 

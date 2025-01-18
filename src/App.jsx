@@ -1,4 +1,4 @@
-import RouterConfig from "./routes/_index";
+import RouterConfig from "./routes/_RouterConfig";
 import { BrowserRouter } from "react-router";
 
 function App() {
