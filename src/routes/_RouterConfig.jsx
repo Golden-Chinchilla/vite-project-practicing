@@ -17,7 +17,10 @@ export default function RouterConfig() {
             <Route path='dashboard' element={<Dashboard></Dashboard>}>
                 <Route index element={<>我是Dashboard的主页</>}></Route>
                 {/* 这里的 errorElement 的触发时机是 element 组件发生渲染错误，和下面的URL路径不匹配渲染指定组件，不是一回事 */}
-                <Route path='user-manage' element={<UserList></UserList>} errorElement={<>UserList渲染错误，启用备用组件</>}></Route>
+                <Route path='user-manage'>
+                    <Route index element={<>用户权限管理</>}></Route>
+                    <Route path="userList" element={<UserList></UserList>}></Route>
+                </Route>
                 <Route path='right-manage'>
                     <Route index element={<>苹果</>}></Route>
                     <Route path='roleList' element={<RoleList></RoleList>}></Route>
